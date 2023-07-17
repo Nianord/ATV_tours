@@ -1,0 +1,72 @@
+.footer {
+	&__container {
+	}
+	&__row {
+		padding: 10px 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-top: 1px solid #121214;
+		border-bottom: 1px solid #121214;
+		@media (max-width: 499px) {
+			align-items: flex-start;
+		}
+	}
+	&__item {
+	}
+	&__logo {
+		flex: 0 1 20%;
+		display: flex;
+		justify-content: flex-start;
+		padding: 0 0 0 6%;
+		@media (max-width: 991px) {
+			padding: 0;
+		}
+		img {
+			width: 65px;
+			object-fit: contain;
+		}
+	}
+	&__menu {
+		flex: 1 1 80%;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 1.1;
+		text-transform: uppercase;
+		padding: 15px 0;
+		@media (max-width: 767px) {
+			font-size: 14px;
+		}
+		@media (max-width: 499px) {
+			padding: 0;
+		}
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 5px;
+		@media (max-width: 991px) {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+		@media (max-width: 499px) {
+			grid-template-columns: repeat(1, 1fr);
+			justify-items: end;  //для сафари отдельная проверка
+		}
+	}
+	&__link {
+		padding: 0 5px;
+	}
+	&__copyright {
+		color: #787878;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.3;
+		padding: 20px 0;
+		text-align: center;
+		@media (max-width: 767px) {
+			font-size: 12px;
+			text-align: left;
+		}
+	}
+}
