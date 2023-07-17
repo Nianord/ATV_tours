@@ -514,8 +514,7 @@ a:hover, a:active {
   gap: 5px; }
   @media (max-width: 991px) {
     .footer__list {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr); } }
+      grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 499px) {
     .footer__list {
       grid-template-columns: repeat(1, 1fr);
@@ -673,8 +672,7 @@ a:hover, a:active {
     margin: 0 -10px; }
     @media (max-width: 991px) {
       .advantages__row {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr); } }
+        grid-template-columns: repeat(2, 1fr); } }
   .advantages__item {
     display: flex;
     padding: 0 10px;
@@ -1191,8 +1189,7 @@ a:hover, a:active {
     margin: 0 -10px; }
     @media (max-width: 991px) {
       .team__row {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr); } }
+        grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 767px) {
       .team__row {
         margin: 0 -5px; } }
@@ -1273,16 +1270,13 @@ a:hover, a:active {
   .conditions__row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     gap: 30px; }
     @media (max-width: 991px) {
       .conditions__row {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr); } }
+        grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 767px) {
       .conditions__row {
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(6, 1fr);
         gap: 15px; } }
   .conditions__item {
     display: flex; }
@@ -1777,17 +1771,14 @@ a:hover, a:active {
   .services__row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     gap: 30px;
     padding: 0 0 50px 0; }
     @media (max-width: 991px) {
       .services__row {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(auto, 1fr); } }
+        grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 767px) {
       .services__row {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(auto, 1fr);
         padding: 0 0 25px 0; } }
     @media (max-width: 499px) {
       .services__row {
