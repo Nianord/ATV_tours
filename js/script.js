@@ -93,7 +93,7 @@ if (popupOpeners.length > 0) {
 	});
 }}
 document.addEventListener ('click', function() {
-	if (!event.target.closest(".popup__opener") && !event.target.closest(".popup__body") && !event.target.closest("#calendar-window") && !event.target.closest(".magnify")) {
+	if (!event.target.closest(".popup__opener") && !event.target.closest(".popup__body") && !event.target.closest("#calendar-window") && !event.target.closest(".magnify") && !event.target.closest(".overlay")) {
 		for (let i =0; i < popup.length; i++) {
 			popup[i].classList.remove('_active');
 		}
