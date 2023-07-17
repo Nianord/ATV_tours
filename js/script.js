@@ -10,6 +10,7 @@ function onYouTubePlayerAPIReady() {
 function onPlayerReady(event) {
    body.addEventListener("click", function() {
        player.pauseVideo();
+	   console.log("000");
     });
  }
 
