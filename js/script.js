@@ -376,23 +376,54 @@ function initCounters() {
 	}
 }
 
-//pics zoom
-$(function(){
-  $('.minimized').click(function(event) {
-    var i_path = $(this).attr('src');
-    $('body').append('<div class="overlay"></div><div class="magnify"><img src="'+i_path+'"><div class="close-popup"><i></i></div></div>');
-    $('.magnify').css({
-     left: ($(document).width() - $('.magnify').outerWidth())/2,
-     top: ($(window).height() - $('.magnify').outerHeight())/2
-   });
-    $('.overlay, .magnify').fadeIn('fast');
-  });
+//minimized
+document.addEventListener('DOMContentLoaded', function() {
+  const minimized = document.querySelectorAll('.minimized');
   
-  $('body').on('click', '.close-popup, .overlay .magnify', function(event) {
-    event.preventDefault();
-    $('.overlay, .magnify').fadeOut('fast', function() {
-      $('.close-popup, .magnify, .overlay').remove();
+  minimized.forEach(function(mini) {
+    mini.addEventListener('click', function(event) {
+      const i_path = this.getAttribute('src');
+      const magnify = `
+        <div class="overlay"></div>
+        <div class="magnify">
+          <img src="${i_path}">
+          <div class="close-popup"><i></i></div>
+        </div>
+      `;
+      document.querySelector('body').insertAdjacentHTML('beforeend', magnify);
+      document.querySelector('.magnify').style.cssText = `
+        left: ${ (document.documentElement.clientWidth - document.querySelector('.magnify').offsetWidth) / 2 }px;
+        top: ${ (window.innerHeight - document.querySelector('.magnify').offsetHeight) / 2 }px;
+      `;
+      document.querySelectorAll('.overlay, .magnify').forEach(function(elem) {
+        elem.style.opacity = 0;
+        elem.style.transition = 'opacity 300ms ease';
+      });
+      document.querySelector('.overlay').style.display = 'block';
+      setTimeout(function() {
+        document.querySelectorAll('.overlay').forEach(function(elem) {
+          elem.style.opacity = 0.7;
+        });
+      }, 50);
+      setTimeout(function() {
+        document.querySelectorAll('.magnify').forEach(function(elem) {
+          elem.style.opacity = 1;
+        });
+      }, 50);
     });
   });
+  
+  document.querySelector('body').addEventListener('click', function(event) {
+    if (event.target.closest('.close-popup, .overlay, .magnify')) {
+      event.preventDefault();
+      document.querySelectorAll('.overlay, .magnify').forEach(function(elem) {
+        elem.style.opacity = 0;
+      });
+      setTimeout(function() {
+        document.querySelectorAll('.close-popup, .magnify, .overlay').forEach(function(elem) {
+          elem.remove();
+        });
+      }, 300);
+    }
+  });
 });
-
