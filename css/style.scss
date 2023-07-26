@@ -128,18 +128,20 @@ a:hover, a:active {
   cursor: pointer;
 }
 .magnify {
-  display: flex;
+  opacity: 0;
   position: fixed;
   z-index: 9999;
   max-height: 85%;
-  max-width: 700px;
+  max-width: 1000px;
   width: 88vw;
   overflow: auto;
+  border-radius: 20px;
 }
 .magnify img {
 	width: 88vw;
 	height: 100%;
-	border-radius: 15px;
+	max-width: 100%;
+	border-radius: 20px;
 }
 .overlay {
   display: none;
