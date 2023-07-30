@@ -159,6 +159,7 @@ let fotoblockSlider = new Swiper('.slider-fotoblock__container', {
 	},
 	slidesPerView: 'auto',
 	loop: true,
+	loopedSlides: 5,
 	slideToClickedSlide: true,
 	effect: 'slide',
 	centeredSlides: true,
